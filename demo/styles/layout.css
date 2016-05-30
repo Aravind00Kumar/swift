@@ -80,7 +80,8 @@ header {
   align-items: stretch;
   min-height: calc(100% - 70px); }
   #container aside {
-    flex: 1 auto;
+    min-width: 300px;
+    max-width: 300px;
     border-right: 1px solid rgba(0, 0, 0, 0.12); }
     #container aside ul.first > li {
       list-style-type: none;
@@ -104,6 +105,11 @@ header {
             content: '>';
             transform: rotate(90deg);
             font-family: cursive; }
+      #container aside ul.first > li a + ul.second {
+        height: 0;
+        overflow: hidden; }
+      #container aside ul.first > li a.open + ul.second {
+        height: auto; }
     #container aside ul.first ul.second {
       padding-left: 15px; }
       #container aside ul.first ul.second > li {
@@ -117,7 +123,6 @@ header {
           #container aside ul.first ul.second > li a:after {
             content: ""; }
   #container #page {
-    flex: 5 auto;
     padding: 0 20px; }
 
 /*# sourceMappingURL=layout.css.map */

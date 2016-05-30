@@ -100,7 +100,8 @@ header{
     align-items: stretch;
     min-height: calc(100% - 70px);
     aside{
-        flex: 1 auto;
+        min-width: 300px;
+        max-width: 300px;
         border-right: 1px solid $dark-dividers;
         ul.first{
             > li{
@@ -130,6 +131,15 @@ header{
                         }
                     }
                 }
+                a + ul.second{
+                    height:0;
+                    overflow: hidden;
+                    //transition: height 4s; 
+                }
+                a.open + ul.second{
+                    height: auto;
+                    //transition: height 4s; 
+                }
             }
         ul.second{
             padding-left: 15px;
@@ -151,7 +161,6 @@ header{
         }
     }
     #page{
-        flex: 5 auto;
         padding: 0 20px;
     }
 }

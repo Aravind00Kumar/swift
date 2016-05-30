@@ -18,133 +18,42 @@
         </nav>
     </header>
     <article id="container">
-        <aside>
+        <aside ng-controller="NavController as navCtrl">
             <ul class="first">
-                <li><a class="select" href="">Quick Start</a></li>
+                <li><a ng-class="{'select': navCtrl.selectedItem === 'Quick Start'}" ng-click="navCtrl.select('Quick Start')" href="#/quickstart">Quick Start</a></li>
                 <li>
-                    <a class="select dropdown" href="">Components</a>
+                    <a class="dropdown" ng-click="navCtrl.toggle('component')" 
+                    ng-class="{'open' : navCtrl.menu.component.isOpen, 'select': navCtrl.menu.component.items.indexOf(navCtrl.selectedItem) !== -1 || navCtrl.menu.component.isOpen}"
+                    href="">Components</a>
                     <ul class="second">
-                        <li><a class="select" href="#">Scroll</a></li>
-                        <li><a href="#">Accordion</a></li>
-                        <li><a href="#">Tabs</a></li>
+                        <li><a ng-class="{'select': navCtrl.selectedItem === 'Scroll'}" ng-click="navCtrl.select('Scroll')" href="#/scroll">Scroll</a></li>
+                        <li><a ng-class="{'select': navCtrl.selectedItem === 'Accordion'}" ng-click="navCtrl.select('Accordion')" href="#/accordion">Accordion</a></li>
+                        <li><a ng-class="{'select': navCtrl.selectedItem === 'Tabs'}" ng-click="navCtrl.select('Tabs')" href="#/tabs">Tabs</a></li>
                     </ul>
                 </li>
-                <li><a class="dropdown" href="" >Work</a>
+                <li><a class="dropdown" ng-click="navCtrl.toggle('work')" 
+                    ng-class="{'open' : navCtrl.menu.work.isOpen, 'select': navCtrl.menu.work.items.indexOf(navCtrl.selectedItem) !== -1 || navCtrl.menu.work.isOpen}"
+                    href="">Work</a>
                     <ul class="second">
-                        <li><a href="">Positions</a></li>
-                        <li><a href="">Dimetions</a></li>
-                        <li><a href="">Mouse</a></li>
+                        <li><a ng-class="{'select': navCtrl.selectedItem === 'Positions'}" ng-click="navCtrl.select('Positions')" href="#/positions">Positions</a></li>
+                        <li><a ng-class="{'select': navCtrl.selectedItem === 'Dimensions'}" ng-click="navCtrl.select('Dimensions')" href="#/dimensions">Dimensions</a></li>
                     </ul>
                 </li>
             </ul>
         </aside>
         <section id="page">
-            <h1>Demo Page</h1>
-            <h2>Heading two</h2>
-            <h3>Heading Three</h3>
-            <p>Paragraph</p>
-            <code>
-                function(){}
-            </code>
-            <h1>Demo Page</h1>
-            <h2>Heading two</h2>
-            <h3>Heading Three</h3>
-            <p>Paragraph</p>
-            <code>
-                function(){}
-            </code>
-            <h1>Demo Page</h1>
-            <h2>Heading two</h2>
-            <h3>Heading Three</h3>
-            <p>Paragraph</p>
-            <code>
-                function(){}
-            </code>
-            <h1>Demo Page</h1>
-            <h2>Heading two</h2>
-            <h3>Heading Three</h3>
-            <p>Paragraph</p>
-            <code>
-                function(){}
-            </code>
-            <h1>Demo Page</h1>
-            <h2>Heading two</h2>
-            <h3>Heading Three</h3>
-            <p>Paragraph</p>
-            <code>
-                function(){}
-            </code>
-            <h1>Demo Page</h1>
-            <h2>Heading two</h2>
-            <h3>Heading Three</h3>
-            <p>Paragraph</p>
-            <code>
-                function(){}
-            </code>
-            <h1>Demo Page</h1>
-            <h2>Heading two</h2>
-            <h3>Heading Three</h3>
-            <p>Paragraph</p>
-            <code>
-                function(){}
-            </code>
-            <h1>Demo Page</h1>
-            <h2>Heading two</h2>
-            <h3>Heading Three</h3>
-            <p>Paragraph</p>
-            <code>
-                function(){}
-            </code>
-            <h1>Demo Page</h1>
-            <h2>Heading two</h2>
-            <h3>Heading Three</h3>
-            <p>Paragraph</p>
-            <code>
-                function(){}
-            </code>
-            <h1>Demo Page</h1>
-            <h2>Heading two</h2>
-            <h3>Heading Three</h3>
-            <p>Paragraph</p>
-            <code>
-                function(){}
-            </code>
-            <h1>Demo Page</h1>
-            <h2>Heading two</h2>
-            <h3>Heading Three</h3>
-            <p>Paragraph</p>
-            <code>
-                function(){}
-            </code>
-            <h1>Demo Page</h1>
-            <h2>Heading two</h2>
-            <h3>Heading Three</h3>
-            <p>Paragraph</p>
-            <code>
-                function(){}
-            </code>
-            <h1>Demo Page</h1>
-            <h2>Heading two</h2>
-            <h3>Heading Three</h3>
-            <p>Paragraph</p>
-            <code>
-                function(){}
-            </code>
-            <h1>Demo Page</h1>
-            <h2>Heading two</h2>
-            <h3>Heading Three</h3>
-            <p>Paragraph</p>
-            <code>
-                function(){}
-            </code>
-
+            <ng-view></ng-virw>
         </section>
     </article>
     <!-- script files -->
     <script src="libs\angular\angular.js"></script>
     <script src="libs\angular-route\angular-route.js"></script>
     <script src="app\app.js"></script>
-
+    <script src="app\components\scroll\scroll-controller.js"></script>
+    <script src="app\components\accordion\accordion-controller.js"></script>
+    <script src="app\components\tabs\tabs-controller.js"></script>
+    <script src="app\work\positions\positions-controller.js"></script>
+    <script src="app\work\dimensions\dimensions-controller.js"></script>
 </body>
 
 </html>

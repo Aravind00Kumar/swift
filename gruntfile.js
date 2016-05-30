@@ -10,12 +10,15 @@
             },
             sass: {
                 dev: {
-                    files: { './src/styles/main.css': './src/styles/main.scss' }
+                    files: {
+                        './src/styles/main.css': './src/styles/main.scss',
+                        './demo/styles/layout.css': './demo/styles/layout.scss'
+                    }
                 }
             },
             watch: {
                 sass: {
-                    files: ['./src/styles/**/*.scss'],
+                    files: ['./src/styles/**/*.scss', './demo/styles/**/*.scss'],
                     tasks: ['sass'],
                     options: {
                         interrupt: true,

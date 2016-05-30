@@ -1,0 +1,105 @@
+﻿
+/*
+        <div class="scroll-pane">
+        <div class="shaft">
+            <div class="arrow up"> </div>
+            <div class="thumb"> </div>
+            <div class="arrow down"> </div>
+        </div>
+        <div class="pane-data">
+
+        </div>
+    </div>
+
+*/
+
+.scroll-pane.win10 {
+    height: 400px;
+    background: #CDDC39;
+    padding: 18px;
+    width:300px;
+}
+
+    .scroll-pane.win10 > .shaft {
+        background: rgba(255,255,255,.3);
+    }
+
+        .scroll-pane.win10 > .shaft:hover {
+            background: rgba(255,255,255,.4);
+        }
+
+    .scroll-pane.win10 .thumb, .scroll-pane.win10 .arrow {
+        background: rgba(255,255,255,.6);
+        color: rgba(0,0,0,.5);
+    }
+
+.scroll-pane {
+    position: relative;
+}
+
+    .scroll-pane > .shaft {
+        background-color: darkgray;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 15px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        transition: all 200ms ease-in;
+        cursor: default;
+    }
+
+    .scroll-pane .arrow, .scroll-pane .thumb {
+        font: normal normal normal 14px/1 FontAwesome;
+        background: rgba(255,255,255,.6);
+        color: rgba(0,0,0,.5);
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        cursor: default;
+    }
+
+        .scroll-pane .thumb:active, .scroll-pane .arrow:active {
+            background: rgba(0,0,0,.5);
+            color: rgba(255,255,255,.6);
+            cursor: default;
+        }
+
+.arrow {
+    height: 18px;
+}
+
+    .arrow.up {
+        top: 0;
+    }
+
+    .arrow.down {
+        bottom: 0;
+    }
+
+    .arrow.up:after {
+        content: "\f0d8";
+    }
+
+    .arrow.down:after {
+        content: "\f0d7";
+    }
+
+.thumb {
+    height: 30px;
+    top: 50px;
+    background-color: blue;
+}
+
+.scroll-pane > .context {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+    .scroll-pane > .context > .content {
+        overflow: hidden;
+        position: absolute;
+    }

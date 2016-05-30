@@ -1,0 +1,41 @@
+{
+  "name": "swift",
+  "version": "1.0.0",
+  "description": "a collection of fast and lightweight native JavaScript UI plugins written in TypeScript which can be used in JQuery, Angular1.X and 2.X projects",
+  "main": "gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aravind00Kumar/swift.git"
+  },
+  "keywords": [
+    "swift",
+    "native",
+    "JavaScript",
+    "plugins",
+    "plugins",
+    "UI",
+    "plugins",
+    "native",
+    "UI",
+    "vanilla",
+    "js",
+    "plugins"
+  ],
+  "author": "Aravind Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aravind00Kumar/swift/issues"
+  },
+  "homepage": "https://github.com/Aravind00Kumar/swift#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-typescript": "^0.8.0"
+  },
+  "dependencies": {}
+}
